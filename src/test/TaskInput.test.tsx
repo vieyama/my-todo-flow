@@ -45,8 +45,6 @@ describe('TaskInput', () => {
     fireEvent.submit(input);
 
     const tasks = useTaskStore.getState().tasks;
-    console.log(tasks);
-
     expect(tasks).toHaveLength(0);
   });
 });
