@@ -9,8 +9,8 @@ const TaskInput: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (taskTitle.trim()) {
+    const trimedText = taskTitle.trim()
+    if (trimedText.length) {
       addTask(taskTitle.trim());
       setTaskTitle('');
       triggerAnimation();
@@ -29,6 +29,7 @@ const TaskInput: React.FC = () => {
     >
       <div className="relative flex items-center">
         <input
+          data-testid="input-test-id"
           type="text"
           value={taskTitle}
           onChange={(e) => setTaskTitle(e.target.value)}

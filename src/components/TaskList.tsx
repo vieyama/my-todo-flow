@@ -49,9 +49,10 @@ const TaskList: React.FC = () => {
 
   return (
     <ul className="space-y-3 max-h-96 overflow-auto scrollbar-hidden">
-      {filteredTasks.map((task: Task) => (
-        <TaskItem key={task.id} task={task} />
-      ))}
+      {Array.isArray(filteredTasks) &&
+        filteredTasks.map((task: Task) => (
+          <TaskItem key={task.id} task={task} />
+        ))}
     </ul>
   );
 };
